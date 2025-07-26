@@ -351,3 +351,26 @@ loadBestSellers();
                 document.getElementById('cookieBanner').style.display = 'block';
             }
             }
+
+        const mensagens = [
+            "💬 João de São Paulo acabou de concluir uma compra!",
+            "💬 Maria de Salvador comprou um acessório!",
+            "💬 Lucas do Rio de Janeiro finalizou um pedido!",
+            "💬 Ana de Recife garantiu sua seda favorita!",
+            "💬 Pedro de Fortaleza acabou de comprar!",
+        ];
+
+        function mostrarPopup() {
+            const popup = document.getElementById("notificacaoCompra");
+            const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+            popup.textContent = mensagemAleatoria;
+            popup.style.display = "block";
+
+            setTimeout(() => {
+            popup.style.display = "none";
+            }, 8000); // desaparece depois de 5 segundos
+        }
+
+        // Mostra um popup a cada 30 segundos
+        setInterval(mostrarPopup, 10000);
+
